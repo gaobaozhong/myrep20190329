@@ -1,0 +1,62 @@
+<script>
+    function palindrome(str) {
+  // 请把你的代码写在这里
+  
+  // 第一步，全部小写
+  str = str.toLowerCase();
+  // 第1.1步，去掉空格
+ str = str.split(" ").join("");
+  // 第1.2步，去掉标点符号
+  newstr = "";
+  for(i= 0;i < str.length; i++)
+    {
+      if((str[i] >= 'a' && str[i] <='z')||(str[i]>='A' && str[i]<='Z')||(str[i]>='0'&&str[i]<='9'))
+        {
+          newstr = newstr.concat(str[i]);
+        }
+      
+    }
+  str = newstr;
+  document.write("str: "+ str + "<br>");
+  // 第二步， 判断是否是回文
+  // 回文的特点就是第一个字符和最后一个字符是相同的，一直到最中间的一个
+  // 第2.1步，判断第一个字符和最后一个字符是否相同
+  for(i = 0; i< str.length; i++)
+  {
+    if(str[i] != str[str.length-1-i])
+       {
+         return false;
+       }
+  }
+  return true;
+}
+
+
+
+document.writeln("eye"+palindrome("eye"));
+document.write("<br>"); //应该返回一个true
+document.writeln("race car"+palindrome("race car")); //应该返回 true.
+document.write("<br>");
+document.writeln("not a palindrome"+palindrome("not a palindrome")); //应该返回 false.
+
+document.write("<br>");
+document.writeln("A man, a plan, a canal. Panama"+palindrome("A man, a plan, a canal. Panama")); //应该返回 true.
+
+document.write("<br>");
+document.writeln("never odd or even"+palindrome("never odd or even")); //应该返回 true.
+
+document.write("<br>");
+document.writeln("nope"+palindrome("nope")); //应该返回 false.
+
+document.write("<br>");
+document.writeln("almostomla"+palindrome("almostomla")); //应该返回 false.
+
+document.write("<br>");
+document.writeln("My age is 0, 0 si ega ym."+palindrome("My age is 0, 0 si ega ym.")); //应该返回 true.
+
+document.write("<br>");
+document.writeln("1 eye for of 1 eye."+palindrome("1 eye for of 1 eye.")); //应该返回 false.
+
+document.write("<br>");
+document.writeln("0_0 (: /-\ :) 0-0"+palindrome("0_0 (: /-\ :) 0-0")); //应该返回 true.
+</script>
