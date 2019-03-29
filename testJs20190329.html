@@ -1,0 +1,38 @@
+<script>
+    function palindrome(str) {
+  // 请把你的代码写在这里
+  
+  // 第一步，全部小写
+  str.toLowerCase();
+  // 第1.1步，去掉空格
+  str.split(" ").join("");
+  // 第1.2步，去掉标点符号
+  newstr = "";
+  for(i= 0;i < str.length; i++)
+    {
+      if((str[i] >= 'a' && str[i] <='z')||(str[i]>='A' && str[i]<='Z')||(str[i]>='0'&&str[i]<='9'))
+        {
+          newstr.concat(str[i]);
+        }
+      
+    }
+  str = newstr;
+  
+  // 第二步， 判断是否是回文
+  // 回文的特点就是第一个字符和最后一个字符是相同的，一直到最中间的一个
+  // 第2.1步，判断第一个字符和最后一个字符是否相同
+  for(i = 0; i< str.length; i++)
+  {
+    if(str[i] != str[str.length-1-i])
+       {
+         return false;
+       }
+  }
+  return true;
+}
+
+
+
+document.write(palindrome("race car"));
+
+</script>
