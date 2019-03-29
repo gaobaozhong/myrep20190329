@@ -1,4 +1,7 @@
-/*Find the Longest Word in a String
+
+<script>
+
+  /*Find the Longest Word in a String
 找出最长单词
 
 在句子中找出最长的单词，并返回它的长度。
@@ -12,10 +15,29 @@
 String.split()
 String.length
 */
-
 function findLongestWord(str) {
   // 请把你的代码写在这里
+  // 找最长的length
+  // 第一步，先转化为数组
+  array = str.split(" ");
+  
+  maxlength = 0;
+  
+  // 第二步，依次找每个字符串的长度
+  for (i = 0;i < array.length; i++)
+  {
+    if(maxlength < array[i].length)
+    {
+      maxlength = array[i].length;
+      str = array[i];
+    }
+
+  }
+  // 第三步，找到最长的，然后返回他的长度
+document.write("str: "+str);
   return str.length;
 }
 
 findLongestWord("The quick brown fox jumped over the lazy dog");
+document.write('findLongestWord("The quick brown fox jumped over the lazy dog"): '+findLongestWord("The quick brown fox jumped over the lazy dog"));
+</script>
