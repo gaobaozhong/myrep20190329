@@ -19,22 +19,22 @@ function findLongestWord(str) {
   // 请把你的代码写在这里
   // 找最长的length
   // 第一步，先转化为数组
-  array = str.split(" ");
-  
-  maxlength = 0;
-  
-  // 第二步，依次找每个字符串的长度
-  for (i = 0;i < array.length; i++)
-  {
-    if(maxlength < array[i].length)
+    array = str.split(" ");
+    
+    maxlength = 0;
+    
+    // 第二步，依次找每个字符串的长度
+    for (i = 0;i < array.length; i++)
     {
-      maxlength = array[i].length;
-      str = array[i];
-    }
+      if(maxlength < array[i].length)
+      {
+        maxlength = array[i].length;
+        str = array[i];
+      }
 
-  }
+    }
   // 第三步，找到最长的，然后返回他的长度
-document.write("str: "+str);
+//document.write("str: "+str);
   return str.length;
 }
 

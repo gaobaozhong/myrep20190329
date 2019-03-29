@@ -1,0 +1,36 @@
+<script>
+/*
+Title Case a Sentence
+句中单词首字母大写
+
+确保字符串的每个单词首字母都大写，其余部分小写。
+
+像'the'和'of'这样的连接符同理。
+
+当你完成不了挑战的时候，记得开大招'Read-Search-Ask'。
+
+这是一些对你有帮助的资源:
+
+String.split()
+*/
+function titleCase(str) {
+  // 请把你的代码写在这里
+  // 第一步，发现每一个空格
+  str = str.split(" ");
+
+  // 第1.1步，拆分成数组
+  // 第二步，在空格后面的一个单词改为大写
+    for(i = 0;i <str.length;i++)
+    {
+        str[i] = str[i][0].toUpperCase()+str[i].substring(1);
+        //document.write(str[i]);
+    }
+  // 第三步，组合成string
+ str = str.join(" ");
+  return str;
+
+}
+
+titleCase("I'm a little tea pot");
+document.write('titleCase(\"I\'m a little tea pot\")'+titleCase("I'm a little tea pot"));
+</script>
